@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    const etudiants = [
+{ name : "sarah" , note : undefined },
+{ name : "monya" , note : 7 },
+{ name : "carlos" , note : 13 },
+{ name : "fadhel" , note : 18 },
+]
+    function failedstdts(l){
+        let filtered = l.filter(function (user) {
+      if (user.note== undefined) {
+        return false;
+      } else return true;
+    });
+        let s=0;
+        filtered.forEach(function(filtered){
+            s+=filtered.note;
+        });
+        n=s/filtered.length
+        let final=filtered.map(function(filtered){
+            if(filtered.note<n){return Object.assign(filtered,{mention:"passable"});}
+            else{return Object.assign(filtered,{mention:"bien"});}
+        })
+        final.sort((a,b)=>b.value-a.value);
+        return final;
+    }
+    console.log(failedstdts(etudiants));
+    </script>
+</body>
+</html>

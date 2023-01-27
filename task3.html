@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+{ name : "sarah" , comment : "j'aime ce poste <3" },
+{ name : "monya" , comment : "le poste est null :( " },
+{ name : "carlos" , comment : "salut l'algérie" }
+]
+        function mooodetect(l){
+            let people=l.map(function(l){
+                if (l.comment.includes("<3")) {return {name:l.name , comment:"heureux"};}
+                else  if (l.comment.includes(":(")) {return {name:l.name , comment:"triste"};}
+                else {return {name:l.name , comment:"neutre"};}
+            });
+            return(people);
+
+        }
+        console.log(mooodetect(users));
+    </script>
+</body>
+</html>
